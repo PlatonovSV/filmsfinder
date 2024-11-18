@@ -5,15 +5,20 @@
 
     <LinearLayout
         android:id="@+id/main"
+        style="@style/Base.Theme.Filmsfinder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/white"
         tools:context=".MainActivity">
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            style="@style/FilmsFinder.Toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"/>
+            android:layout_height="56dp"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/FilmsFinder.TextAppearance.Title" />
 
         <androidx.fragment.app.FragmentContainerView
 
