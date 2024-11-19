@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-11-18T10:14:15.424145300Z">
+        <DropdownSelection timestamp="2024-11-19T12:16:38.695824300Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=RFCR81SW4HV" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\praio\.android\avd\Small_Phone_API_26.avd" />
             </handle>
           </Target>
         </DropdownSelection>
