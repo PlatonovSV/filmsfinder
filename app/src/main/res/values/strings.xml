@@ -6,4 +6,16 @@
     <string name="unknown">НЕТ ИНФОРМАЦИИ</string>
     <string name="films">Фильмы</string>
     <string name="genres">Жанры</string>
+    <string name="retry">Повторить</string>
+    <string name="loading_failed">Во время загрузки произошла ошибка</string>
+    <string name="no_internet">Ошибка подключения сети</string>
+    <string name="server_error">Ошибка сервера</string>
+    <string name="year">%1$s год</string>
+    <string name="move_finder">КиноПоиск</string>
+    <string name="genres_unknown">Жанр неизвестен</string>
+    <string name="year_unknown">год выхода неизвестен</string>
+    <string name="name_unknown">Название фильма неизвестно</string>
+    <string name="description_unknown">Описание фильма отсутствует</string>
+    <string name="rating_unknown">Рейтинг неизвестен,</string>
+    <string name="back">Кнопка навигации назад</string>
 </resources>

@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.praions.filmsfinder.ui.search.Genre
+import com.praions.filmsfinder.model.Genre
 import com.praions.filmsfinder.ui.theme.FilmsFinderTheme
 
 class GenreAdapter(

@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.praions.filmsfinder.ui.search.SearchFragment">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.praions.filmsfinder.ui.search.SearchViewModel" />
-    </data>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/films"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="top"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:spanCount="2" />
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/compose_topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/films"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:spanCount="2" />
+
+            <androidx.compose.ui.platform.ComposeView
+                android:id="@+id/compose_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <androidx.compose.ui.platform.ComposeView
+                android:id="@+id/compose_error"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </FrameLayout>
     </LinearLayout>
 
 </layout>

@@ -7,14 +7,4 @@
 
 
     <style name="Theme.Filmsfinder" parent="Base.Theme.Filmsfinder" />
-
-    <style name="FilmsFinder.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
-        <item name="background">@color/primary</item>
-        <item name="titleTextColor">@color/white</item>
-    </style>
-    <style name="FilmsFinder.TextAppearance.Title" parent="Base.TextAppearance.AppCompat.Title">
-        <item name="android:textSize">18sp</item>
-        <item name="lineHeight">22sp</item>
-        <item name="android:letterSpacing">0.015</item>
-    </style>
 </resources>

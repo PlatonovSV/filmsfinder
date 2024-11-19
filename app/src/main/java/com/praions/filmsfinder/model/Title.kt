@@ -1,4 +1,4 @@
-package com.praions.filmsfinder.ui.search
+package com.praions.filmsfinder.model
 
 data class Title(
     val id: Int,

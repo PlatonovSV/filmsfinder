@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.praions.filmsfinder.ui.search.Title
+import com.praions.filmsfinder.model.Title
 import com.praions.filmsfinder.ui.theme.FilmsFinderTheme
 
 class TitleAdapter() : ListAdapter<Title, TitleAdapter.TitleViewHolder>(TitleDiffCallback()) {

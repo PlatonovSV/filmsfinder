@@ -1,37 +1,30 @@
 package com.praions.filmsfinder.adapters
 
 import android.view.ViewGroup
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.ComposeView
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
 import com.praions.filmsfinder.R
-import com.praions.filmsfinder.ui.search.FilmCard
+import com.praions.filmsfinder.common.FilmsFinderAsyncImage
+import com.praions.filmsfinder.model.FilmCard
 import com.praions.filmsfinder.ui.theme.FilmsFinderTheme
 
 class FilmAdapter(
@@ -83,41 +76,19 @@ fun FilmCardItem(
         .clip(MaterialTheme.shapes.small)
         .clickable { onClick(film.id) }
     ) {
-        val imageModifier = Modifier
-            .weight(1f)
-            .clip(MaterialTheme.shapes.small)
-        if (film.imageUrl != null) {
-            AsyncImage(
-                model = ImageRequest.Builder(LocalContext.current).data(film.imageUrl)
-                    .crossfade(true).build(),
-                error = painterResource(R.drawable.ic_broken_image),
-                placeholder = painterResource(R.drawable.loading_img),
-                contentDescription = stringResource(R.string.movie_poster),
-                contentScale = ContentScale.Crop,
-                modifier = imageModifier
-            )
-        } else {
-            Box(modifier = imageModifier.background(MaterialTheme.colorScheme.tertiary).fillMaxWidth()) {
-                Icon(
-                    painter = painterResource(R.drawable.media),
-                    contentDescription = stringResource(R.string.movie_poster),
-                    modifier = Modifier
-                        .size(height = 51.8.dp, width = 57.44.dp)
-                        .padding(top = 5.18.dp)
-                        .align(Alignment.Center),
-                    tint = MaterialTheme.colorScheme.onTertiary
-                )
-            }
-        }
+        FilmsFinderAsyncImage(
+            imageUrl = film.imageUrl,
+            modifier = Modifier.weight(1f)
+        )
         Spacer(modifier = Modifier.height(8.dp))
         val movieName = film.name ?: stringResource(R.string.unknown)
-        val movieNameFormated = if (movieName.length > 20) movieName.take(20) + "..." else movieName
         Text(
-            text = movieNameFormated,
+            text = movieName,
             style = MaterialTheme.typography.labelLarge,
             fontWeight = FontWeight.Bold,
             minLines = 2,
-            maxLines = 2
+            maxLines = 2,
+            overflow = TextOverflow.Ellipsis
         )
     }
 }
